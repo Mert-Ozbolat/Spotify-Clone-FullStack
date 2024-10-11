@@ -3,7 +3,7 @@ This project is a Spotify clone built with HTML, SCSS, and JavaScript, leveragin
 
 
 <ul>
-  <h3>Features:</h3>
+  <h1>Features:</h1>
   <li>🎵 <b>Shazam API Integration:</b> Fetches real-time song information.</li>
   <li>📱  <b>Responsive Design:</b> Adapts seamlessly to all screen sizes.</li>
   <li>🎨 <b>SCSS Implementation:</b> Clean and maintainable styling.</li>

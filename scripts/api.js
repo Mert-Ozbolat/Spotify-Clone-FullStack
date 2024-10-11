@@ -7,7 +7,6 @@ const options = {
     }
 };
 
-
 export default class API {
     async getPopular() {
         const data1 = await this.searchMusic("Linkin Park");

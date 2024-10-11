@@ -193,12 +193,29 @@ main section .list {
   flex-direction: column;
   gap: 10px;
   height: 100%;
+  max-height: 300px;
+  overflow: hidden;
+}
+.card .card img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
 }
 .card .card-info {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-grow: 1;
+  height: 100%;
+}
+.card .card-info h3,
+.card .card-info h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card:hover .play {
   bottom: 20px;

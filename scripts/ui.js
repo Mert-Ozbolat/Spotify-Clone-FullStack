@@ -1,24 +1,24 @@
 export default class UI {
-    constructor() {
-        this.list = document.querySelector(".list");
-        this.form = document.querySelector("form");
-        this.title = document.querySelector("#title");
-        this.player = document.querySelector(".player");
-        this.audio = document.querySelector(".player audio");
-    }
+  constructor() {
+    this.list = document.querySelector(".list");
+    this.form = document.querySelector("form");
+    this.title = document.querySelector("#title");
+    this.player = document.querySelector(".player");
+    this.audio = document.querySelector(".player audio");
+  }
 
-    renderCards(songs) {
-        this.list.innerHTML = "";
+  renderCards(songs) {
+    this.list.innerHTML = "";
 
-        songs.forEach((song) => {
-            const div = document.createElement("div");
-            div.className = "card";
-            div.dataset.title = song.title;
-            div.dataset.subtitle = song.subtitle;
-            div.dataset.img = song.images.coverarthq;
-            div.dataset.mp3 = song.hub.actions[1].uri;
+    songs.forEach((song) => {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.dataset.title = song.title;
+      div.dataset.subtitle = song.subtitle;
+      div.dataset.img = song.images.coverarthq;
+      div.dataset.mp3 = song.hub.actions[1].uri;
 
-            div.innerHTML = `
+      div.innerHTML = `
            <figure>
               <img
                 src="${song.images.coverarthq}"
@@ -33,29 +33,29 @@ export default class UI {
             <h4>${song.subtitle}</h4>
           </div>
       `;
-            this.list.appendChild(div);
-        });
-    }
+      this.list.appendChild(div);
+    });
+  }
 
 
-    renderLoader() {
-        this.list.innerHTML = `
-<div class="loader">
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-</div>
+  renderLoader() {
+    this.list.innerHTML = `
+          <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+          </div>
 
     `;
-    }
+  }
 
-    updateTitle(text) {
-        this.title.textContent = text;
-    }
+  updateTitle(text) {
+    this.title.textContent = text;
+  }
 
-    renderPlayer(song) {
-        this.player.innerHTML = `
+  renderPlayer(song) {
+    this.player.innerHTML = `
       <div class="info">
         <img
           src="${song.img}"
@@ -78,14 +78,14 @@ export default class UI {
       </div>
     `;
 
-        const audio = this.player.querySelector("audio");
+    const audio = this.player.querySelector("audio");
 
-        audio.addEventListener("play", this.toggleAnimation);
-        audio.addEventListener("pause", this.toggleAnimation);
-    }
+    audio.addEventListener("play", this.toggleAnimation);
+    audio.addEventListener("pause", this.toggleAnimation);
+  }
 
-    toggleAnimation() {
-        const img = document.querySelector(".info img");
-        img.classList.toggle("animate");
-    }
+  toggleAnimation() {
+    const img = document.querySelector(".info img");
+    img.classList.toggle("animate");
+  }
 }
